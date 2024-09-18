@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #f8f9fa;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .hero-section {
+            height: 80vh;
+            background-color: #e9ecef;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .hero-overlay h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .hero-overlay p {
+            font-size: 1.25rem;
+        }
+        .card-img-top {
+            aspect-ratio: 400 / 225;
+            object-fit: cover;
+        }
+        .bg-muted {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="header py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="d-flex align-items-center gap-2">
+                <svg class="bi bi-trophy" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <!-- TrophyIcon SVG content here -->
+                </svg>
+                <span class="h4 m-0">Sports Portal</span>
+            </a>
+            <nav class="d-none d-md-flex align-items-center gap-3">
+                <a href="#" class="text-decoration-none">Events</a>
+                <a href="#" class="text-decoration-none">Sports</a>
+                <a href="#" class="text-decoration-none">Teams</a>
+                <a href="#" class="text-decoration-none">Venues</a>
+                <a href="#" class="text-decoration-none">Contact</a>
+            </nav>
+            <a href="#" class="btn btn-primary d-none d-md-inline-block">Register</a>
+            <button class="btn btn-outline-secondary d-md-none">
+                <svg class="bi bi-list" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <!-- MenuIcon SVG content here -->
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main class="flex-grow-1">
+        <section class="hero-section">
+            <img src="/placeholder.svg" alt="Sports and Events" class="img-fluid w-100 h-100 object-cover">
+            <div class="hero-overlay text-center">
+                <div>
+                    <h1>Discover the World of Sports and Events</h1>
+                    <p>Explore upcoming events, join sports teams, and book venues.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+                        <a href="#" class="btn btn-primary">Register Now</a>
+                        <a href="#" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Upcoming Events</h2>
+                    <p>Check out our upcoming sports and entertainment events.</p>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                    <!-- Repeat this block for each event -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="/placeholder.svg" class="card-img-top" alt="Event Image">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center gap-2">
+                                    <svg class="bi bi-calendar" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- CalendarIcon SVG content here -->
+                                    </svg>
+                                    <span class="small">April 15, 2023</span>
+                                </div>
+                                <h5 class="card-title">Basketball Tournament</h5>
+                                <p class="card-text">Join us for an exciting basketball tournament featuring top teams from the region. Register now to secure your spot.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End repeat -->
+                </div>
+            </div>
+        </section>
+        <section class="py-5 bg-muted">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Featured Sports</h2>
+                    <p>Explore our selection of popular sports and join a team.</p>
+                </div>
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-3">
+                    <!-- Repeat this block for each sport -->
+                    <div class="col">
+                        <a href="#" class="text-decoration-none d-flex flex-column align-items-center p-3 rounded bg-white hover-bg-light transition">
+                            <svg class="bi bi-basket" width="40" height="40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <!-- ShoppingBasketIcon SVG content here -->
+                            </svg>
+                            <span class="mt-2">Basketball</span>
+                        </a>
+                    </div>
+                    <!-- End repeat -->
+                </div>
+            </div>
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Our Services</h2>
+                    <p>Discover how we can help you with your sports and events needs.</p>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                    <!-- Repeat this block for each service -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <svg class="bi bi-calendar-check" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- CalendarCheckIcon SVG content here -->
+                                        </svg>
+                                    </div>
+                                    <h5 class="card-title m-0">Event Registration</h5>
+                                </div>
+                                <p class="card-text">Easily register for upcoming sports and entertainment events through our user-friendly platform.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End repeat -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-muted py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <svg class="bi bi-trophy" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <!-- TrophyIcon SVG content here -->
+                </svg>
+                <span>Sports Portal</span>
+            </div>
+            <nav class="d-flex gap-3">
+                <a href="#" class="text-decoration-none">About</a>
+                <a href="#" class="text-decoration-none">Terms</a>
+                <a href="#" class="text-decoration-none">Privacy</a>
+                <a href="#" class="text-decoration-none">Contact</a>
+            </nav>
+            <p class="small text-muted">&copy; 2024 Sports Portal. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .hero-section {
+            background: url('/hero-image.jpg') center center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .bg-muted {
+            background-color: #f8f9fa;
+        }
+        .text-muted-foreground {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-primary text-white py-4 px-6 d-flex justify-content-between align-items-center">
+        <a href="#" class="d-flex align-items-center gap-2 text-white">
+            <!-- Replace with actual icon -->
+            <span class="bi-trophy-fill"></span>
+            <span class="h4 mb-0">Sports Portal</span>
+        </a>
+        <nav class="d-none d-md-flex gap-4">
+            <a href="#" class="text-white">Events</a>
+            <a href="#" class="text-white">Sports</a>
+            <a href="#" class="text-white">Register</a>
+            <a href="#" class="text-white">Dashboard</a>
+        </nav>
+        <button class="btn btn-outline-light d-md-none">
+            <!-- Replace with actual icon -->
+            <span class="bi-list"></span>
+        </button>
+    </header>
+
+    <main class="flex-grow-1">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="bg-dark bg-opacity-50 p-4 rounded">
+                <h1 class="display-4">Welcome to the Sports Portal</h1>
+                <p class="lead mb-4">Discover the latest sports events, programs, and activities in your area.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="btn btn-primary px-4">View Events</a>
+                    <a href="#" class="btn btn-secondary px-4">Register Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="h3 mb-4">Upcoming Events</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="/placeholder.svg" class="card-img-top" alt="Event 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Basketball Tournament</h5>
+                                <p class="text-muted-foreground">June 15, 2024 - June 17, 2024</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="/placeholder.svg" class="card-img-top" alt="Event 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Soccer Clinic</h5>
+                                <p class="text-muted-foreground">July 1, 2024 - July 5, 2024</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="/placeholder.svg" class="card-img-top" alt="Event 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Tennis Tournament</h5>
+                                <p class="text-muted-foreground">August 1, 2024 - August 7, 2024</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Programs -->
+        <section class="py-5 bg-muted">
+            <div class="container">
+                <h2 class="h3 mb-4">Featured Sports Programs</h2>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <!-- Replace with actual icon -->
+                                <span class="bi-basket2-fill h1 mb-3"></span>
+                                <h5 class="card-title">Basketball</h5>
+                                <p class="card-text">Develop your skills and compete in local tournaments.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <!-- Replace with actual icon -->
+                                <span class="bi-soccer h1 mb-3"></span>
+                                <h5 class="card-title">Soccer</h5>
+                                <p class="card-text">Improve your footwork and join competitive leagues.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <!-- Replace with actual icon -->
+                                <span class="bi-racket h1 mb-3"></span>
+                                <h5 class="card-title">Tennis</h5>
+                                <p class="card-text">Hone your skills and compete in local tournaments.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <!-- Replace with actual icon -->
+                                <span class="bi-volleyball h1 mb-3"></span>
+                                <h5 class="card-title">Volleyball</h5>
+                                <p class="card-text">Join a team and compete in local leagues.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="h3 mb-4">Calendar</h2>
+                <!-- Replace with actual calendar integration -->
+                <div class="bg-light p-4 rounded">
+                    Calendar goes here.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <a href="#" class="d-flex align-items-center gap-2 text-white">
+                <!-- Replace with actual icon -->
+                <span class="bi-trophy-fill"></span>
+                <span class="h4 mb-0">Sports Portal</span>
+            </a>
+            <nav class="d-flex gap-4 mt-3 mt-md-0">
+                <a href="#" class="text-white">About</a>
+                <a href="#" class="text-white">Contact</a>
+                <a href="#" class="text-white">Privacy</a>
+                <a href="#" class="text-white">Terms</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

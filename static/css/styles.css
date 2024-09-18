@@ -1,0 +1,50 @@
+/* Basic styles to complement Bootstrap */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+header, footer {
+    padding: 1rem 2rem;
+}
+
+.bg-primary {
+    background-color: #dc5605 !important;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.text-primary {
+    color: #dc5605 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+a.text-primary:hover {
+    text-decoration: underline;
+}
+
+a.text-white:hover {
+    text-decoration: underline;
+}
+
+/* Custom icon styles */
+.bi {
+    width: 40px;
+    height: 40px;
+}
+
+main .h1, main .h2, main .h3, main .h4, main .h5 {
+    font-weight: bold;
+}
