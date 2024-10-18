@@ -2,14 +2,27 @@
 
 {% block title %}GSMCOE Events{% endblock %}
 
-{% comment %} {% block navigation%}
+<!-- {% block navigation%}
                 <a href="/" class="text-white text-decoration-none">Home</a>
                 <a href="sports/" class="text-white text-decoration-none">Sports</a>
                 <a href="teams/" class="text-white text-decoration-none">Teams</a>
                 <a href="registration/" class="text-white text-decoration-none" target="_blank">Registration</a>
-{% endblock %} {% endcomment %}
+{% endblock %} -->
+  
+        <nav class="d-none d-md-flex align-items-center gap-4" >
+            <a href="{% url "sports" %}" class="text-white text-decoration-none p-2" id="navbar" >Sports</a>
+            <a href="{% url "teams" %}" class="text-white text-decoration-none p-2" id="navbar">Teams</a>
+            <a href="{% url "Event Highlights" %}" class="text-white text-decoration-none p-2" id="navbar">Event Highlights</a>
+            <a href="{% url "Organisers" %}" class="text-white text-decoration-none p-2" id="navbar">Organisers</a>
+            <a href="{% url "registration" %}" class="text-white text-decoration-none p-2" target="_blank" id="navbar">Registration</a>
+        </nav>
+        <a href="admin/">
+            <button class="btn btn-outline-light btn-sm btn-info"  >Admin Log In</button>
+        </a>
 
-{% block content %}
+
+{% block main %}
+
 <h1>Make changes for Events page here</h1>
 
 {% endblock %}

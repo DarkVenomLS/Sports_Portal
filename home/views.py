@@ -13,5 +13,11 @@ def sports(request):
 def teams(request):
     return render(request, "teams.html")
 
+def highlights(request):
+    return render(request, "highlights.html")
+
+def organisers(request):
+    return render(request, "organisers.html")
+
 def registration(request):
     return render(request, "registration.html")
