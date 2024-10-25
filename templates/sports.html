@@ -1,8 +1,106 @@
 {% extends "base.html" %}
 
 {% block title %}GSMCOE Sports{% endblock %}
+{% block body %}
+<section class="colored-section" id="title" >
+    <div class="container-fluid">
+        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+                <h2 class="testimonial-text">Upcoming Sports</h2>
+                <div class="carousel-item active container-fluid">
+                    <h2 class="testimonial-text">Cricket</h2>
+                    <p>Check out our upcoming sports and entertainment events.</p>
+                    <img class="Schedule_image" src="/static/assets/sports/cricket.jpg" alt="Explore upcoming events,join sports teams, and book venues">
+                </div>
 
+                <div class="carousel-item container-fluid">
+                    <h2 class="testimonial-text">Football</h2>
+                    <img class="Schedule_image" src="/static/assets/sports/football.jpg" alt="Explore upcoming events,join sports teams, and book venues">
+                </div>
 
-{% block content %}
-<h1>Make changes of sports page here</h1>
-{% endblock content %}
+                <div class="carousel-item container-fluid">
+                    <h2 class="testimonial-text">Voleyball</h2>
+                    <img class="Schedule_image" src="/static/assets/sports/voleyball.jpg" alt="Explore upcoming events,join sports teams, and book venues.">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="/Events.html" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="/Events.html" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="/Events.html" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="white-section" id="pricing">
+
+    <h2 class="section-heading">FEATURES SPORTS</h2>
+    <p>Explore our selection of popular sports and join a team.</p>
+
+    <div class="row">
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>FOOTBALL</h3>
+                    <img src="./static/assets/sports/football.svg" alt="" height="150px" id="football-img">
+                </div>
+                <div class="card-body">
+                    <!-- <h2 class="price-text">₹ 1500</h2> -->
+                    <p>Football is a team sport played between two teams of 11
+        players each. It is played on a rectangular grass field, or an
+        artificial turf, with a goal at each end of the field. The
+        object of the game is to score by manoeuvring the ball
+        into the opposing goal. The team that scores the most
+        goals by the end of the match wins.</p>
+                    <a href="form.html"><button class="btn btn-lg btn-block btn-dark" type="button" >View</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>CRICKET</h3>
+                    <img src="assets/cricket.svg" alt="" height="150px">
+                </div>
+                <div class="card-body">
+                    <!-- <h2 class="price-text">₹ 1500</h2> -->
+                    <p>Cricket is played between two teams of eleven players
+        each. One team, which is batting, tries to score runs, while
+        the other team is fielding, and tries to prevent this. Runs
+        are scored by hitting the ball, which is thrown by a player
+        from the fielding team to a player from the batting team,
+        across the boundary, or by the two batting players
+        running back-and-forth between the two wickets</p>
+                    <a href="form.html"><button class="btn btn-lg btn-block btn-dark" type="button">View</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>BASKETBALL</h3>
+                    <img src="assets/basketball.svg" alt="" height="150px">
+                </div>
+                <div class="card-body">
+                    <!-- <h2 class="price-text">₹ 1000</h2> -->
+                    <p>Feel the heat and dunk on repeat . Basketball is a team sport in which two teams of five
+        active players. Each try to score points against one
+        another by propelling a ball through a 10 feet (3m) high
+        hoop (the goal) under organised rules.
+        Points are scored by shooting the ball through the basket;
+        the team with more points at the end of the game wins.</p>
+                    <a href="form.html"><button class="btn btn-lg btn-block btn-dark" type="button">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
+
+</body>
+</html>

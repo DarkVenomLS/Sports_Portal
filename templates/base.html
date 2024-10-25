@@ -1,4 +1,4 @@
-
+{% comment %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,162 +28,79 @@
                 <button class="btn btn-outline-light btn-sm">Admin Log In</button>
             </a>
         </header>
+ {% endcomment %}
 
-        <main class="flex-grow-1">
-            {% block content %}
-            <section class="bg-primary text-white text-center py-5">
-                <h1 class="display-4">Elevate Your Sports Experience with GSMCOE</h1>
-                <p class="lead">Discover upcoming events, manage athlete profiles, and more.</p>
-                <a href="registration/" class="btn btn-light" target="_blank">Register Now</a>
-            </section>
-            <section class="py-5 px-6">
-                <h2 class="h2 mb-4">Sports Categories</h2>
-                <!-- <div class="row g-3">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="bg-light rounded p-4 text-center">
-                            <svg class="bi mb-3" width="24" height="24" fill="currentColor">
-                                <!-- Club Icon -->
-                            <!-- </svg>
-                            <h3 class="h5">Football</h3>
-                            <p class="text-muted">Discover the latest football events and manage your team.</p>
-                            <a href="#" class="text-primary text-decoration-none">View Football Events</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="bg-light rounded p-4 text-center">
-                            <svg class="bi mb-3" width="24" height="24" fill="currentColor"> -->
-                                <!-- Shopping Basket Icon -->
-                            <!-- </svg>
-                            <h3 class="h5">Basketball</h3>
-                            <p class="text-muted">Stay up-to-date with the latest basketball events and teams.</p>
-                            <a href="#" class="text-primary text-decoration-none">View Basketball Events</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="bg-light rounded p-4 text-center">
-                            <svg class="bi mb-3" width="24" height="24" fill="currentColor"> -->
-                                <!-- Turtle Icon -->
-                            <!-- </svg>
-                            <h3 class="h5">Tennis</h3>
-                            <p class="text-muted">Explore the world of tennis events and manage your players.</p>
-                            <a href="#" class="text-primary text-decoration-none">View Tennis Events</a>
-                        </div>
-                    </div>
-                </div> -->
+ 
+<!DOCTYPE html>
+<html>
 
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <div class="card h-100 text-center">
-                            <div class="card-body">
-                                <!-- Replace with actual icon -->
-                                <span class="bi-basket2-fill h1 mb-3"></span>
-                                <h5 class="card-title">Basketball</h5>
-                                <p class="card-text">Develop your skills and compete in local tournaments.</p>
-                                <a href="#" class="btn btn-danger">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card h-100 text-center">
-                            <div class="card-body">
-                                <!-- Replace with actual icon -->
-                                <span class="bi-soccer h1 mb-3"></span>
-                                <h5 class="card-title">Soccer</h5>
-                                <p class="card-text">Improve your footwork and join competitive leagues.</p>
-                                <a href="#" class="btn btn-danger">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card h-100 text-center">
-                            <div class="card-body">
-                                <!-- Replace with actual icon -->
-                                <span class="bi-racket h1 mb-3"></span>
-                                <h5 class="card-title">Tennis</h5>
-                                <p class="card-text">Hone your skills and compete in local tournaments.</p>
-                                <a href="#" class="btn btn-danger">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card h-100 text-center">
-                            <div class="card-body">
-                                <!-- Replace with actual icon -->
-                                <span class="bi-volleyball h1 mb-3"></span>
-                                <h5 class="card-title">Volleyball</h5>
-                                <p class="card-text">Join a team and compete in local leagues.</p>
-                                <a href="#" class="btn btn-danger">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- <section class="bg-light py-5 px-6">
-                <h2 class="h2 mb-4">Upcoming Events</h2>
-                <div class="bg-white rounded p-4">
-                    <div id="calendar" class="mb-4">
-                        <!-- Calendar (you can use a calendar plugin here) -->
-                    <!-- </div>
-                    <div class="text-end">
-                        <button class="btn btn-outline-primary btn-sm">View All Events</button>
-                    </div>
-                </div>
-            </section> -->
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Sports Portal {% endblock title %}</title>
+        <link rel="stylesheet" href="/static/css/base.css">
+        <!-- <link rel="stylesheet" href=""> -->
+        <style>
+            {% block style %}{% endblock style %}
+        </style>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        {% comment %} <link rel="stylesheet" href="static/css/styles.css"> {% endcomment %}
+        <link rel="stylesheet" href="static/css/base.css">
+
+        <!-- Font Awesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <link rel="" href="form.html">
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-between">
+            <a href="/" class="d-flex align-items-center gap-2 text-white text-decoration-none">
+                <img class="logo background-size-contain" src="/static/assets/img/trophy.png" alt="logo" style="width: 45px; height: 35px;">
+                <span class="h3 mb-0">Sports Portal</span>
+            </a>
+            
+            <nav class="d-none d-md-flex align-items-center gap-4 anchor" >
+                <a href="/events" style="color: white;" class="anchor">Events</a>
+                <a href="/sports" style="color: white;" class="anchor">Sports</a>
+                <a href="/teams" style="color: white;" class="anchor">Teams</a>
+                <a href="/highlights" style="color: white;" class="anchor">Event Highlights</a>
+                <a href="/organisers" style="color: white;" class="anchor">Organisers</a>
+                <a href="/registration" style="color: white;" class="anchor">Registration</a>
+                <!-- <a href="secondpage.html">Open</a> -->
+            </nav>
+            <a href="/admin">
+                <button class="btn btn-outline-light btn-sm btn-info" style="margin-right: 30px;">Admin Log In</button>
+            </a>
+        </header>
+
+
+
         
-            <!-- Upcoming Events -->
-            <section class="py-5">
-                <div class="container">
-                    <h2 class="h3 mb-4">Upcoming Events</h2>
-                    <div class="row g-4">
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="card">
-                                <img src="static/assets/img/cricket.svg" class="card-img-top" alt="Event 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cricket Tournament</h5>
-                                    <p class="text-muted-foreground">July 1, 2024 - July 5, 2024</p>
-                                    <a href="#" class="btn btn-danger">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="card">
-                                <img src="/static/assets/img/football.svg" class="card-img-top" alt="Event 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Football Tournament</h5>
-                                    <p class="text-muted-foreground">July 1, 2024 - July 5, 2024</p>
-                                    <a href="#" class="btn btn-danger">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card">
-                                <img src="/static/assets/img/kabaddi.svg" class="card-img-top" alt="Event 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kabaddi Tournament</h5>
-                                    <p class="text-muted-foreground">August 1, 2024 - August 7, 2024</p>
-                                    <a href="#" class="btn btn-danger">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        {% endblock %}
-        </main>
+        {% block body %} {% endblock %}
 
 
-        <footer class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-between">
-            <div>&copy; 2024 Sports Portal. All rights reserved.</div>
-            <nav class="d-flex align-items-center gap-4">
-                <a href="#" class="text-white text-decoration-none">About</a>
-                <a href="#" class="text-white text-decoration-none">Contact</a>
-                <a href="#" class="text-white text-decoration-none">Privacy</a>
-                <a href="#" class="text-white text-decoration-none">Terms</a>
+
+
+
+        <footer class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-center">
+            <div class="bg-primary text-white d-flex">&copy; 2024 Sports Portal. All rights reserved.</div>
+            <nav class="d-none d-md-flex align-items-center gap-4 footer">
+                <a href="#" class="text-white text-decoration-none anchor">About</a>
+                <a href="#" class="text-white text-decoration-none anchor">Contact</a>
+                <a href="#" class="text-white text-decoration-none anchor">Privacy</a>
+                <a href="#" class="text-white text-decoration-none anchor">Terms</a>
             </nav>
         </footer>
 
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

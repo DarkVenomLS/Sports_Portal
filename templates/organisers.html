@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Organisers{% endblock title %}
+{% block style %}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+{% endblock style %}
+{% block body %}
+
+<h1>Event Coordinators</h1>
+<br><br>
+<table class='table'>
+    <tr>
+      <th>Position</th>
+      <th>Name</th>
+      <th>Contact</th>
+    </tr>
+    <tr>
+        <td>Teaching Sports Head</td>
+        <td>Prof. Sachin Yadav</td>
+        <td>9898989898</td>
+    </tr>
+    <tr>
+      <td>Cricket Co-ordinator</td>
+      <td>Lokesh Sarode</td>
+      <td>7972142499</td>
+    </tr>
+    <tr>
+      <td>Football co-ordinator</td>
+      <td>Ashwin Santapure</td>
+      <td>8080985101</td>
+    </tr>
+    <tr>
+      <td>Voleyball co-ordinator</td>
+      <td>Tanmay Gaikwad</td>
+      <td>9876549876</td>
+    </tr>
+    <tr>
+      <td>Kabaddi co-ordinator</td>
+      <td>Parag Nandre</td>
+      <td>9356610970</td>
+    </tr>
+    <tr>
+      <td>Badminton co-ordinator</td>
+      <td>Yash Sawant</td>
+      <td>9325132658</td>
+    </tr>
+    <tr>
+      <td>Chess co-ordinator</td>
+      <td>Pratham Shah</td>
+      <td>9898989898</td>
+    </tr>
+    <tr>
+      <td>Carrom co-ordinator</td>
+      <td>Nikhil Kagde</td>
+      <td>9022715799</td>
+    </tr>
+  </table>
+
+{% endblock body %}

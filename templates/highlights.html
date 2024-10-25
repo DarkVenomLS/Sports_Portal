@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery{% endblock title %}
+{% block style %}
+{% comment %} .imgs{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:stretch;
+    background-size: contain;
+} {% endcomment %}
+.imgs{
+    width:50%%
+}
+{% endblock style %}
+{% block body %}
+
+<h1>Past Event Images</h1>
+<div class="d-flex">
+    <div class="p-2 bg-warning flex-fill">
+        <img src="/static/assets/events/event-c.jpg" alt="" class='imgs'>
+    </div>
+    <div class="p-2 bg-warning flex-fill">
+        <img src="/static/assets/events/event-c.jpg" alt="" class='imgs'>
+    </div>
+    {% comment %} <div class="p-2 bg-primary flex-fill">
+        <img src="/static/assets/sports/cricket-c.jpg" alt="" class='imgs'>
+    </div> {% endcomment %}
+  </div>
+{% comment %} <div class="container">
+    <img src="/static/assets/events/shivjayanti24.jpg" alt="" class='imgs'>
+    <img src="/static/assets/sports/cricket-c.jpg" alt="" class='imgs'>
+    <img src="/static/assets/sports/cricket-c.jpg" alt="" class='imgs'>
+</div> {% endcomment %}
+
+{% endblock body %}

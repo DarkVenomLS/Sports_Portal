@@ -1,5 +1,187 @@
 {% extends 'base.html' %}
 
-{% comment %} {% block title %}Sports Portal{% endblock %} {% endcomment %}
+<link rel="stylesheet" href="/static/css/styles.css">
 
+{% comment %} {% block title %}Sports Portal{% endblock %} {% endcomment %}
+{% block body %}
+<div class="alert alert-primary my-0 py-0" role="alert">
+    !! NOTIFICATIONS !!
+</div>
+<main class="flex-grow-1">
+    <section class="bg-primary text-white text-center py-5">
+        <img class="m-2" id="aamhi-bach-photo" src="static/assets/img/aamhi_bachelors.png" alt="Photo" height="150px" width="150px">
+        <h1 class="display-4">Elevate Your Sports Experience with GSMCOE</h1>
+        <p class="lead">Discover upcoming events, manage athlete profiles, and more.</p>
+        <a href="registration/" class="btn btn-light" target="_blank">Register Now</a>
+    </section>
+
+
+    
+    <div class="row">
+        <div class="col-lg-4 cards">
+          <h1>VISION</h1>
+          <i class="icon fas fa-check-circle fa-4x"></i>
+          <p class="big-heading">THE VISION OF THE SPORTS COMMITTEE IS TO ORGANIZE TRAINING, COACHING AND EDUCATION IN SPORTS FOR EVERYBODY SO THAT THEY CAN LEARN TO KEEP THEMSELVES PHYSICALLY FIT.. IT IS DESIGNED TO SERVE THE INTERESTS OF THE STUDENT COMMUNITY COMPETITIVE SPORTS AND OTHER RECREATIONAL ACTIVITIES.</p>
+        </div>
+        <div class="col-lg-4 cards">
+          <h1>MISSION</h1>
+          <i class="icon fas fa-bullseye fa-4x"></i>
+          <p class="big-heading">THE COMMITTEE AIMS AT ENHANCING THE INTEREST OF THE PARTICIPANTS IN THE FIELD OF SPORTS. TO ACHIEVE THE ABOVE, WE PLANNING TO ORGANIZE VARIOUS COMPETITIONS.IN THE FOLLOWING SPORTS: WALKATHON,FOOTBALL, CRICKET, BASKETBALL, VOLLEYBALL, KABADDI, CHESS, BADMINTON.</p>
+        </div>
+        <div class="col-lg-4 cards">
+          <h1>OBJECTIVES</h1>
+          <i class="icon fas fa-rocket fa-4x"></i>
+          <p class="big-heading">THE SPORTS COMMITTEE IS TO PROMOTE EVERY INDIVIDUALS' HEALTH, PHYSICAL WELL-BEING AS WELL AS THE ACQUISITION OF PHYSICAL SKILLS AMONG THE STUDENTS. THE COMMITTEE ASPIRES TO INCULCATE QUALITIES SUCH AS SPORTSMANSHIP, TEAM SPIRIT AND BONDING. </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="py-5 px-6">
+        <h2 class="h2 mb-4">Sports Categories</h2>
+        <!-- <div class="row g-3">
+            <div class="col-lg-4 col-sm-6">
+                <div class="bg-light rounded p-4 text-center">
+                    <svg class="bi mb-3" width="24" height="24" fill="currentColor">
+                        <!-- Club Icon -->
+                    <!-- </svg>
+                    <h3 class="h5">Football</h3>
+                    <p class="text-muted">Discover the latest football events and manage your team.</p>
+                    <a href="#" class="text-primary text-decoration-none">View Football Events</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="bg-light rounded p-4 text-center">
+                    <svg class="bi mb-3" width="24" height="24" fill="currentColor"> -->
+                        <!-- Shopping Basket Icon -->
+                    <!-- </svg>
+                    <h3 class="h5">Basketball</h3>
+                    <p class="text-muted">Stay up-to-date with the latest basketball events and teams.</p>
+                    <a href="#" class="text-primary text-decoration-none">View Basketball Events</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="bg-light rounded p-4 text-center">
+                    <svg class="bi mb-3" width="24" height="24" fill="currentColor"> -->
+                        <!-- Turtle Icon -->
+                    <!-- </svg>
+                    <h3 class="h5">Tennis</h3>
+                    <p class="text-muted">Explore the world of tennis events and manage your players.</p>
+                    <a href="#" class="text-primary text-decoration-none">View Tennis Events</a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <!-- Replace with actual icon -->
+                        <span class="bi-basket2-fill h1 mb-3"></span>
+                        <h5 class="card-title">Basketball</h5>
+                        <p class="card-text">Develop your skills and compete in local tournaments.</p>
+                        <a href="#" class="btn btn-danger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <!-- Replace with actual icon -->
+                        <span class="bi-soccer h1 mb-3"></span>
+                        <h5 class="card-title">Soccer</h5>
+                        <p class="card-text">Improve your footwork and join competitive leagues.</p>
+                        <a href="#" class="btn btn-danger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <!-- Replace with actual icon -->
+                        <span class="bi-racket h1 mb-3"></span>
+                        <h5 class="card-title">Tennis</h5>
+                        <p class="card-text">Hone your skills and compete in local tournaments.</p>
+                        <a href="#" class="btn btn-danger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <!-- Replace with actual icon -->
+                        <span class="bi-volleyball h1 mb-3"></span>
+                        <h5 class="card-title">Volleyball</h5>
+                        <p class="card-text">Join a team and compete in local leagues.</p>
+                        <a href="#" class="btn btn-danger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="bg-light py-5 px-6">
+        <h2 class="h2 mb-4">Upcoming Events</h2>
+        <div class="bg-white rounded p-4">
+            <div id="calendar" class="mb-4">
+                <!-- Calendar (you can use a calendar plugin here) -->
+            <!-- </div>
+            <div class="text-end">
+                <button class="btn btn-outline-primary btn-sm">View All Events</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Upcoming Events -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="h3 mb-4">Upcoming Events</h2>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card">
+                        <img src="static/assets/img/cricket.svg" class="card-img-top" alt="Event 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Cricket Tournament</h5>
+                            <p class="text-muted-foreground">July 1, 2024 - July 5, 2024</p>
+                            <a href="#" class="btn btn-danger">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card">
+                        <img src="/static/assets/img/football.svg" class="card-img-top" alt="Event 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Football Tournament</h5>
+                            <p class="text-muted-foreground">July 1, 2024 - July 5, 2024</p>
+                            <a href="#" class="btn btn-danger">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card">
+                        <img src="/static/assets/img/kabaddi.svg" class="card-img-top" alt="Event 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Kabaddi Tournament</h5>
+                            <p class="text-muted-foreground">August 1, 2024 - August 7, 2024</p>
+                            <a href="#" class="btn btn-danger">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock body %}
 
