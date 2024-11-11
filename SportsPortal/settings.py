@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Manually added app name
     'home.apps.HomeConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
