@@ -38,24 +38,37 @@
                         {{ form.teamname|add_class:"form-control mb-3"|attr:"placeholder:Enter team name" }}
                         {{ form.teamname.errors }}
                     </div>
-                    <div class="form-group">
-                        <label for="{{ form.playername.id_for_label }}" class="form-label">Player Name</label>
-                        {{ form.playername|add_class:"form-control mb-3"|attr:"placeholder:Enter player name" }}
-                        {{ form.playername.errors }}
+                    <!-- Player Information -->
+                    <h4>Player Information</h4>
+                    <!-- Player Registration Formset -->
+                    {{ player_formset.management_form }}
+                    {% for player_form in player_formset %}
+                    <div class="player-form">
+                        <h5>Player {{ forloop.counter }}</h5>
+                        <div class="form-group">
+                            <label for="{{ form.playername.id_for_label }}" class="form-label">Player Name</label>
+                            {{ form.playername|add_class:"form-control mb-3"|attr:"placeholder:Enter player name" }}
+                            {{ form.playername.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.year_of_study.id_for_label }}" class="form-label">Year of Study</label>
+                            {{ form.year_of_study|add_class:"form-control mb-3"|attr:"placeholder:FE/SE/TE/BE" }}
+                            {{ form.year_of_study.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.contact_number.id_for_label }}" class="form-label">Contact Number</label>
+                            {{ form.contact_number|add_class:"form-control mb-3"|attr:"placeholder:Enter contact" }}
+                            {{ form.contact_number.errors }}
+                        </div>
+                        <hr>
                     </div>
-                    <div class="form-group">
-                        <label for="{{ form.year_of_study.id_for_label }}" class="form-label">Year of Study</label>
-                        {{ form.year_of_study|add_class:"form-control mb-3"|attr:"placeholder:FE/SE/TE/BE" }}
-                        {{ form.year_of_study.errors }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.contact_number.id_for_label }}" class="form-label">Contact Number</label>
-                        {{ form.contact_number|add_class:"form-control mb-3"|attr:"placeholder:Enter contact" }}
-                        {{ form.contact_number.errors }}
-                    </div>
+                    {% endfor %}
+                    
+                    <!-- Submit Button -->
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </div>
+
                 </form>
             </div>
         </div>

@@ -1,14 +1,15 @@
 :root {
     --violet-blue: #3F52A1ff;
     --cornflower-blue: #7191E6ff;
-    --vista-blue: #8697C3ff;
-    --powder-blue: #ADBADAff;
-    --magnolia: #EEE8F6ff;
+    /* --vista-blue: #8697C3ff; */
+    /* --powder-blue: #ADBADAff; */
+    /* --magnolia: rgb(238, 232, 246); */
 }
 
 body{
-    background-color: var(--magnolia);
-    color: var(--violet-blue);
+    /* background-color: var(--magnolia); */
+    /* background-color: whitesmoke; */
+    color: rgb(6, 3, 3);
 }
 /* body {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
