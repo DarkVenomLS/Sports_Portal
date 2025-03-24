@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} {% load media %} {% endcomment %}
+
+{% block title %}Gallery{% endblock title %}
+{% block style %}
+.imgs{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:stretch;
+    background-size: contain;
+}
+{% endblock style %}
+{% block body %}
+    <h1>Gallery Highlights</h1>
+
+    <!-- Event Filter Buttons -->
+    <nav>
+        <a href="{% url 'gallery' %}">All Events</a> |
+        {% for event in sub_events %}
+            <a href="{% url 'gallery_by_event' event.id %}">{{ event.name }}</a> |
+        {% endfor %}
+    </nav>
+
+    <h2>{% if sub_event %} Showing Images for {{ sub_event.name }} {% else %} Showing All Images {% endif %}</h2>
+
+    <div class="gallery">
+        {% for image in images %}
+            <div class="gallery-item">
+                <img src="{{ image.image.url }}" alt="Gallery Image" width="300">
+                {% if image.caption %}
+                    <p>{{ image.caption }}</p>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No images available.</p>
+        {% endfor %}
+    </div>
+
+{% endblock body %}

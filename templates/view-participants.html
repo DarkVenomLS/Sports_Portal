@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Participants{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Participants</h2>
+    
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>College Name</th>
+                    <th>Year Of Study</th>
+                    <th>Contact</th>
+                    <th>Emergency Contact</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for participant in view_participants %}
+                <tr>
+                    <td>{{ participant.full_name }}</td>
+                    <td>{{ participant.college_name }}</td>
+                    <td>{{ participant.year_of_study }}</td>
+                    <td>{{ participant.contact_number }}</td>
+                    <td>{{ participant.emergency_contact }}</td>
+                    <td>{{ participant.sub_event }}</td>
+
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">No participants registered yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{% url 'download_participants_excel' %}" class="btn btn-success my-3">
+        Download as Excel
+    </a>
+</div>
+{% endblock body %}

@@ -37,18 +37,15 @@
     <head>
         <meta charset="utf-8">
         <title>{% block title %}Sports Portal{% endblock title %}</title>
-        <link rel="stylesheet" href="/static/css/base.css">
-        <!-- <link rel="stylesheet" href=""> -->
-        <style>
-            {% block style %}{% endblock style %}
-        </style>
+        {% load static %}
+
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
 
         <!-- CSS Stylesheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         {% comment %} <link rel="stylesheet" href="static/css/styles.css"> {% endcomment %}
-        <link rel="stylesheet" href="static/css/base.css">
+        <link rel="stylesheet" href="/static/css/base.css">
 
         <!-- Font Awesome -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -61,44 +58,41 @@
     </head>
 
     <body>
-        <header class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-between">
-            <a href="/" class="d-flex align-items-center gap-2 text-white text-decoration-none">
-                <img class="logo background-size-contain" src="/static/assets/img/trophy.png" alt="logo" style="width: 45px; height: 35px;">
-                <span class="h3 mb-0">Sports Portal</span>
-            </a>
-            
-            <nav class="d-none d-md-flex align-items-center gap-4 anchor" >
-                <a href="/events" style="color: white;" class="anchor">Events</a>
-                <a href="/sports" style="color: white;" class="anchor">Sports</a>
-                <a href="/teams" style="color: white;" class="anchor">Teams</a>
-                <a href="/highlights" style="color: white;" class="anchor">Event Highlights</a>
-                <a href="/organisers" style="color: white;" class="anchor">Organisers</a>
-                <a href="/registration" style="color: white;" class="anchor">Registration</a>
-                <!-- <a href="secondpage.html">Open</a> -->
-            </nav>
-            <a href="/admin">
-                <button class="btn btn-outline-light btn-sm btn-info" style="margin-right: 30px;">Admin Log In</button>
-            </a>
-        </header>
+        <div class="wrapper">
+            <header class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-between">
+                <a href="/" class="d-flex align-items-center gap-2 text-white text-decoration-none">
+                    <img class="logo background-size-contain" src="/static/assets/img/trophy.png" alt="logo" style="width: 45px; height: 35px;">
+                    <span class="h3 mb-0">Sports Portal</span>
+                </a>
+                
+                <nav class="d-none d-md-flex align-items-center gap-4 anchor" >
+                    <a href="/events" style="color: white;" class="anchor">Events</a>
+                    <a href="/events/sports" style="color: white;" class="anchor">Sports</a>
+                    <a href="/teams" style="color: white;" class="anchor">Teams</a>
+                    <a href="/events/gallery" style="color: white;" class="anchor">Event Highlights</a>
+                    <a href="/organisers" style="color: white;" class="anchor">Organisers</a>
+                    <a href="/registration/view-participants" style="color: white;" class="anchor">View Participants</a>
+                    {% comment %} <a href="/registration" style="color: white;" class="anchor">Registration</a> {% endcomment %}
+                    <!-- <a href="secondpage.html">Open</a> -->
+                </nav>
+                <a href="/admin">
+                    <button class="btn btn-outline-light btn-sm btn-info" style="margin-right: 30px;">Admin Log In</button>
+                </a>
+            </header>
 
+            <main class="content">
+                {% block body %} {% endblock %}
+            </main>
 
-
-        
-        {% block body %} {% endblock %}
-
-
-
-
-
-        <footer class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-center">
-            <div class="bg-primary text-white d-flex">&copy; 2024 Sports Portal. All rights reserved.</div>
-            <nav class="d-none d-md-flex align-items-center gap-4 footer">
-                <a href="#" class="text-white text-decoration-none anchor">About</a>
-                <a href="#" class="text-white text-decoration-none anchor">Contact</a>
-                <a href="#" class="text-white text-decoration-none anchor">Privacy</a>
-                <a href="#" class="text-white text-decoration-none anchor">Terms</a>
-            </nav>
-        </footer>
+            <footer class=" footer bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-center">
+                <div class="bg-primary text-white d-flex">&copy; 2024 Sports Portal. All rights reserved.</div>
+                <nav class="d-none d-md-flex align-items-center gap-4 footer">
+                    <a href="#" class="text-white text-decoration-none anchor">About</a>
+                    <a href="#" class="text-white text-decoration-none anchor">Contact</a>
+                    <a href="#" class="text-white text-decoration-none anchor">Privacy</a>
+                    <a href="#" class="text-white text-decoration-none anchor">Terms</a>
+                </nav>
+            </footer>
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

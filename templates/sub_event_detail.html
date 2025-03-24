@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ sub_event.name }}</title>
+</head>
+<body>
+    <h1>{{ sub_event.name }}</h1>
+    <p>{{ sub_event.description }}</p>
+    <p>Date: {{ sub_event.date }}</p>
+    <p>Time: {{ sub_event.time }}</p>
+    <p>Venue: {{ sub_event.venue }}</p>
+
+    <h2>Participants</h2>
+    <ul>
+        {% for participant in sub_event.participants.all %}
+            <li>{{ participant.full_name }} - {{ participant.college_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Gallery</h2>
+    <ul>
+        {% for photo in sub_event.gallery.all %}
+            <li>
+                <img src="{{ photo.image.url }}" alt="{{ photo.caption }}" style="max-width: 200px;">
+                <p>{{ photo.caption }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'sub_event_list' pk=sub_event.main_event.pk %}">Back to Sub-Events</a>
+</body>
+</html>

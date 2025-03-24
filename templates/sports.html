@@ -2,7 +2,7 @@
 
 {% block title %}GSMCOE Sports{% endblock %}
 {% block body %}
-<section class="colored-section" id="title" >
+{% comment %} <section class="colored-section" id="title" >
     <div class="container-fluid">
         <div id="testimonial-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
             <div class="carousel-inner">
@@ -34,9 +34,22 @@
             </a>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 
-<!-- Pricing -->
+<h1>Sports</h1>
+    {% comment %} <h1>All Main Events</h1> {% endcomment %}
+    <ul>
+        {% for sport in sports %}
+            <li>
+                <h2>{{ sport.name }}</h2>
+                <p>{{ sport.description }}</p>
+                <p>Start Date: {{ sport.start_date }}</p>
+                <p>End Date: {{ sport.end_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% comment %} <!-- Pricing -->
 <section class="white-section" id="pricing">
 
     <h2 class="section-heading">FEATURES SPORTS</h2>
@@ -99,7 +112,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 {% endblock body %}
 
 </body>

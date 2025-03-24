@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Event Gallery{% endblock title %}
+
+{% block body %}
+    <h1>Main Events</h1>
+    {% comment %} <h1>All Main Events</h1> {% endcomment %}
+    <ul>
+        {% for main_event in main_events %}
+            <li>
+                <h2><a href="{% url 'sub_event_list' pk=main_event.pk %}">{{ main_event.name }}</a></h2>
+                <p>{{ main_event.description }}</p>
+                <p>Start Date: {{ main_event.start_date }}</p>
+                <p>End Date: {{ main_event.end_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock body %}
+
