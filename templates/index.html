@@ -1,23 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
-<link rel="stylesheet" href="/static/css/styles2.css">
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock head %}
 
 {% comment %} {% block title %}Sports Portal{% endblock %} {% endcomment %}
 {% block body %}
 <div class="alert alert-primary my-0 py-0" role="alert">
     !! NOTIFICATIONS !!
 </div>
-<main class="flex-grow-1">
+<main class="flex-grow-1 main">
     <section class="bg-primary text-white text-center py-5">
-        <img class="m-2" id="aamhi-bach-photo" src="static/assets/img/aamhi_bachelors.png" alt="Photo" height="150px" width="150px">
+        <img class="m-2" id="moze-logo" src="static/assets/img/moze-logo.png" alt="Photo" height="150px" width="200px">
         <h1 class="display-4">Elevate Your Sports Experience with GSMCOE</h1>
         <p class="lead">Discover upcoming events, manage athlete profiles, and more.</p>
-        {% comment %} <a href="registration/" class="btn btn-light" target="_blank">Register Now</a> {% endcomment %}
     </section>
 
 
     
-    <div class="row">
+    {% comment %} <div class="row">
         <div class="col-lg-4 cards">
           <h1>VISION</h1>
           <i class="icon fas fa-check-circle fa-4x"></i>
@@ -33,18 +35,43 @@
           <i class="icon fas fa-rocket fa-4x"></i>
           <p class="big-heading">THE SPORTS COMMITTEE IS TO PROMOTE EVERY INDIVIDUALS' HEALTH, PHYSICAL WELL-BEING AS WELL AS THE ACQUISITION OF PHYSICAL SKILLS AMONG THE STUDENTS. THE COMMITTEE ASPIRES TO INCULCATE QUALITIES SUCH AS SPORTSMANSHIP, TEAM SPIRIT AND BONDING. </p>
         </div>
+    </div> {% endcomment %}
+    <div class="row g-4 text-center">
+        <div class="col-lg-4 mt-5">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <i class="fas fa-check-circle fa-4x icon-style"></i>
+                    <h3 class="card-title">Vision</h3>
+                    <p class="card-text">
+                        The vision of the sports committee is to organize training, coaching, and education in sports for everyone to stay physically fit. It serves the interests of students in competitive sports and recreational activities.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-5">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <i class="fas fa-bullseye fa-4x icon-style"></i>
+                    <h3 class="card-title">Mission</h3>
+                    <p class="card-text">
+                        The committee aims to enhance participants' interest in sports. We plan to organize competitions in various sports: Walkathon, Football, Cricket, Basketball, Volleyball, Kabaddi, Chess, and Badminton.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-5">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <i class="fas fa-rocket fa-4x icon-style"></i>
+                    <h3 class="card-title">Objectives</h3>
+                    <p class="card-text">
+                        The sports committee promotes health, well-being, and physical skills among students. It aspires to inculcate qualities like sportsmanship, team spirit, and bonding.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 

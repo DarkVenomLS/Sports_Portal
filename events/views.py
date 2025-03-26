@@ -15,7 +15,7 @@ class SubEventListView(DetailView):
 
 class SubEventDetailsView(DetailView):
     model = SubEvent
-    template_name = "sub_event.html"
+    template_name = "sub_event_detail.html"
     context_object_name = "sub_event"
 
 def GalleryDetailView(request, sub_event_id=None):

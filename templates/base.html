@@ -1,50 +1,16 @@
-{% comment %} 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Sports Portal{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
 
-    <div class="d-flex flex-column min-vh-100">
-        <header class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-between">
-            <a href="/" class="d-flex align-items-center gap-2 text-white text-decoration-none">
-                <svg class="bi me-2" width="24" height="24" fill="currentColor">
-                    <!-- Trophy Icon -->
-                </svg>
-                <span class="h4 mb-0">Sports Portal</span>
-            </a>
-            <nav class="d-none d-md-flex align-items-center gap-4">
-                <a href="{% url "events" %}" class="text-white text-decoration-none">Events</a>
-                <a href="{% url "sports" %}" class="text-white text-decoration-none">Sports</a>
-                <a href="{% url "teams" %}" class="text-white text-decoration-none">Teams</a>
-                <a href="{% url "registration" %}" class="text-white text-decoration-none" target="_blank">Registration</a>
-            </nav>
-            <a href="admin/">
-                <button class="btn btn-outline-light btn-sm">Admin Log In</button>
-            </a>
-        </header>
- {% endcomment %}
-
- 
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <title>{% block title %}Sports Portal{% endblock title %}</title>
         {% load static %}
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+        {% comment %} <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet"> {% endcomment %}
 
         <!-- CSS Stylesheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        {% comment %} <link rel="stylesheet" href="static/css/styles.css"> {% endcomment %}
         <link rel="stylesheet" href="/static/css/base.css">
 
         <!-- Font Awesome -->
@@ -52,11 +18,12 @@
         <link rel="" href="form.html">
 
         <!-- Bootstrap Scripts -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </head>
+        {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+        {% block head %}{% endblock head %}
+    </head>
+    
     <body>
         <div class="wrapper">
             <header class="bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-between">
@@ -65,25 +32,23 @@
                     <span class="h3 mb-0">Sports Portal</span>
                 </a>
                 
-                <nav class="d-none d-md-flex align-items-center gap-4 anchor" >
-                    <a href="/events" style="color: white;" class="anchor">Events</a>
-                    <a href="/events/sports" style="color: white;" class="anchor">Sports</a>
-                    <a href="/teams" style="color: white;" class="anchor">Teams</a>
-                    <a href="/events/gallery" style="color: white;" class="anchor">Event Highlights</a>
-                    <a href="/organisers" style="color: white;" class="anchor">Organisers</a>
-                    <a href="/registration/view-participants" style="color: white;" class="anchor">View Participants</a>
-                    {% comment %} <a href="/registration" style="color: white;" class="anchor">Registration</a> {% endcomment %}
-                    <!-- <a href="secondpage.html">Open</a> -->
+                <nav class="d-none d-md-flex align-items-center gap-3 nav" >
+                    <a href="/events" style="color: white;" class="nav-link">Events</a>
+                    <a href="/events/sports" style="color: white;" class="nav-link">Sports</a>
+                    <a href="/teams" style="color: white;" class="nav-link">Teams</a>
+                    <a href="/events/gallery" style="color: white;" class="nav-link">Event Highlights</a>
+                    <a href="/organisers" style="color: white;" class="nav-link">Organisers</a>
+                    <a href="/registration/view-participants" style="color: white;" class="nav-link">View Participants</a>
                 </nav>
                 <a href="/admin">
-                    <button class="btn btn-outline-light btn-sm btn-info" style="margin-right: 30px;">Admin Log In</button>
+                    <button class="btn btn-outline-light btn-sm" style="margin-right: 30px;">Admin Log In</button>
                 </a>
             </header>
-
+            
             <main class="content">
                 {% block body %} {% endblock %}
             </main>
-
+            
             <footer class=" footer bg-primary text-white py-4 px-6 d-flex align-items-center justify-content-center">
                 <div class="bg-primary text-white d-flex">&copy; 2024 Sports Portal. All rights reserved.</div>
                 <nav class="d-none d-md-flex align-items-center gap-4 footer">
@@ -93,8 +58,8 @@
                     <a href="#" class="text-white text-decoration-none anchor">Terms</a>
                 </nav>
             </footer>
-
+            
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0NXBBCRXjI69o+ptGgt+Tn9nK4+VHRmD1L9B10xBfsZUnFZghvAeqfHOhfp1xE/Z" crossorigin="anonymous"></script>
     </body>
 </html>

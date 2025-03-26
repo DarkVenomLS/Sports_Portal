@@ -1,32 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ sub_event.name }}</title>
-</head>
-<body>
-    <h1>{{ sub_event.name }}</h1>
-    <p>{{ sub_event.description }}</p>
-    <p>Date: {{ sub_event.date }}</p>
-    <p>Time: {{ sub_event.time }}</p>
-    <p>Venue: {{ sub_event.venue }}</p>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ sub_event.name }}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/sub-event.css" %}">
+{% endblock head %}
+{% block body %}
+<div class="container py-5">
+    <h1 class="text-primary text-center mb-4">{{ sub_event.name }}</h1>
 
-    <h2>Participants</h2>
-    <ul>
+    <div class="card sub-event-card">
+        <div class="card-body">
+            <p class="event-detail"><strong>Description:</strong> {{ sub_event.description }}</p>
+            <p class="event-detail"><strong>Date:</strong> {{ sub_event.date }}</p>
+            <p class="event-detail"><strong>Time:</strong> {{ sub_event.time }}</p>
+            <p class="event-detail"><strong>Venue:</strong> {{ sub_event.venue }}</p>
+        </div>
+        <p class="mt-3 mb-0 text-lg btn btn-primary">
+            <a href="{% url 'participant_register' sub_event.id%}" class="text-black font-weight-bold" style="text-decoration: none">Register</a>
+        </p>
+    </div>
+
+    <!-- Participants Section -->
+    <h2 class="text-primary mt-4">Participants</h2>
+    <ul class="list-group mb-4">
         {% for participant in sub_event.participants.all %}
-            <li>{{ participant.full_name }} - {{ participant.college_name }}</li>
+            <li class="list-group-item">{{ participant.full_name }} - {{ participant.college_name }}</li>
+        {% empty %}
+            <li class="list-group-item text-muted">No participants yet.</li>
         {% endfor %}
     </ul>
 
-    <h2>Gallery</h2>
-    <ul>
+    <!-- Gallery Section -->
+    <h2 class="text-primary">Gallery</h2>
+    <div class="row">
         {% for photo in sub_event.gallery.all %}
-            <li>
-                <img src="{{ photo.image.url }}" alt="{{ photo.caption }}" style="max-width: 200px;">
-                <p>{{ photo.caption }}</p>
-            </li>
+        <div class="col-md-3">
+            <div class="gallery-item">
+                <img src="{{ photo.image.url }}" alt="{{ photo.caption }}" class="img-fluid rounded shadow-sm">
+                <p class="text-center mt-2">{{ photo.caption }}</p>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p class="text-muted text-center">No images available.</p>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
 
-    <a href="{% url 'sub_event_list' pk=sub_event.main_event.pk %}">Back to Sub-Events</a>
-</body>
-</html>
+    <!-- Back Button -->
+    <div class="text-center mt-4">
+        <a href="{% url 'sub_event_list' pk=sub_event.main_event.pk %}" class="btn btn-secondary">
+            Back to Sub-Events
+        </a>
+    </div>
+</div>
+{% endblock %}

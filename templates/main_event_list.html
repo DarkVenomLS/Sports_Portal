@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}Event Gallery{% endblock title %}
-
+{% load static %}
+{% comment %} {% block title %}Event Gallery{% endblock title %} {% endcomment %}
+{% comment %} 
 {% block body %}
     <h1>Main Events</h1>
-    {% comment %} <h1>All Main Events</h1> {% endcomment %}
     <ul>
         {% for main_event in main_events %}
             <li>
@@ -14,5 +14,68 @@
             </li>
         {% endfor %}
     </ul>
+{% endblock body %} {% endcomment %}
+
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{% block title %}Event Gallery{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static '/css/events.css' %}">
+
+{% endblock head %}
+ {% comment %} <link rel="stylesheet" href="static/css/events.css"> {% endcomment %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-4">Main Events</h1>
+
+    <div class="row">
+        {% for main_event in main_events %}
+        <div class="col-12">
+            <div class="card event-card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{% url 'sub_event_list' pk=main_event.pk %}" class="event-link">
+                            {{ main_event.name }}
+                        </a>
+                    </h4>
+                    <p class="card-text">{{ main_event.description }}</p>
+                    <p class="event-date"><strong>Start:</strong> {{ main_event.start_date }}</p>
+                    <p class="event-date"><strong>End:</strong> {{ main_event.end_date }}</p>
+                    <a href="{% url 'sub_event_list' pk=main_event.pk %}" class="btn btn-outline-primary mt-3">
+                        Show More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <p class="alert alert-warning">No events available.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% comment %} <div class="row">
+        {% for main_event in main_events %}
+        <div class="col-12">
+            <!-- Wrap the entire card inside an <a> tag -->
+            <a href="{% url 'sub_event_list' pk=main_event.pk %}" class="event-card-link">
+                <div class="card event-card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ main_event.name }}</h4>
+                        <p class="card-text">{{ main_event.description }}</p>
+                        <p class="event-date"><strong>Start:</strong> {{ main_event.start_date }}</p>
+                        <p class="event-date"><strong>End:</strong> {{ main_event.end_date }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <p class="alert alert-warning">No events available.</p>
+        </div>
+        {% endfor %}
+    </div> {% endcomment %}
+</div>
 {% endblock body %}
+
 

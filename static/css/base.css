@@ -1,4 +1,4 @@
-/* Global Styles */
+
 :root {
     --primary-color: #3F52A1;
     --secondary-color: #7191E6;
@@ -20,13 +20,12 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
 .logo {
     width: 40px;
     height: auto;
 }
 
-/* Footer */
+
 footer {
     width: 100%;
     text-align: center;
@@ -45,7 +44,6 @@ footer nav a:hover {
     text-decoration: underline;
 }
 
-/* Ensures footer stays at the bottom */
 main {
     flex: 1;
 }
