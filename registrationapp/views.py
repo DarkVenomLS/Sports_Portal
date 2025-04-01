@@ -27,7 +27,7 @@ class ParticipantCreateView(View):
     def get(self, request, sub_event_id):
         sub_event = get_object_or_404(SubEvent, id=sub_event_id)  # Fetch the sub-event
         form = RegistrationForm(initial={'sub_event': sub_event})  # Pre-fill sub-event
-        return render(request, self.template_name, {'form': form, 'sub_event': sub_event})
+        return render(request, self.template_name, {'form': form, 'sub_event': sub_event, 'fees': sub_event.fees})
     
     def post(self, request, sub_event_id):
         sub_event = get_object_or_404(SubEvent, id=sub_event_id)
@@ -36,8 +36,8 @@ class ParticipantCreateView(View):
             participant = form.save(commit=False)
             participant.sub_event = sub_event  # Ensure the correct sub-event is saved
             participant.save()
-            return render(request, 'success.html')  # Redirect after successful registration
-        return render(request, self.template_name, {'form': form, 'sub_event': sub_event})
+            return redirect('/registration/success')  # Redirect after successful registration
+        return render(request, self.template_name, {'form': form, 'sub_event': sub_event, 'fees': sub_event.fees})
 
 
 def download_participants_excel(request):

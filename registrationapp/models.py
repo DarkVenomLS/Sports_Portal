@@ -38,12 +38,16 @@ class TeamRegistration(models.Model):
 
 class Participant(models.Model):
     full_name = models.CharField(max_length=100)  # Name of the participant or team leader
-    email = models.EmailField(unique=True)  # Participant's email
+    # email = models.EmailField(unique=True)  # Participant's email
+    email = models.EmailField()  # Participant's email
     college_name = models.CharField(max_length=100)  # Name of the college
     year_of_study = models.CharField(max_length=2)
     contact_number = models.CharField(max_length=10)  # Contact number
     emergency_contact = models.CharField(max_length=10)  # Contact number
     sub_event = models.ForeignKey(SubEvent, on_delete=models.CASCADE, related_name='participants')  # Linked to SubEvent
+
+    class Meta:
+        unique_together = ('email', 'sub_event') 
 
     def __str__(self):
         return f"{self.full_name} ({self.sub_event.name})"

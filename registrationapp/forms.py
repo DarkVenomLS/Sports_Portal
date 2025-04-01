@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import formset_factory
+from django.forms import ValidationError, formset_factory
 from events.models import SubEvent
 from .models import Participant
 
@@ -9,27 +9,20 @@ class RegistrationForm(forms.ModelForm):
         queryset=SubEvent.objects.all(),  # Load all sub-events
         widget=forms.HiddenInput(),  # Hide the field (auto-filled)
     )
-
-    # fields = ['fullname','college', 'year_of_study', 'email', 'contact_number', 'emergency_contact']
-    # fullname = forms.CharField(label="Full Name", max_length=50)
-    # college = forms.CharField(label="College Name", max_length=100)
-    # year_of_study = forms.CharField(label="Year of Study", max_length=10)
-    # email = forms.EmailField(label="Email", max_length=50)
-    # contact_number = forms.CharField(label="Contact Number", max_length=10)
-    # emergency_contact = forms.CharField(label="Emergency Contact Number", max_length=10)
+    
     class Meta:
         model = Participant
         fields = ['full_name', 'email', 'college_name', 'year_of_study', 'contact_number', 'emergency_contact', 'sub_event']
 
-    # SPORT_CHOICES = [
-    #     ('', 'Select a sport'),  # Placeholder option
-    #     ('cricket', 'Cricket'),
-    #     ('football', 'Football'),
-    #     ('volleyball', 'Volleyball'),
-    #     ('kabaddi', 'Kabaddi'),
-    #     # Add more sports as needed
-    # ]
-    # sport = forms.ChoiceField(choices=SPORT_CHOICES, required=True)
+    def clean(self):
+        cleaned_data = super().clean()
+        email = cleaned_data.get('email')
+        sub_event = cleaned_data.get('sub_event')
+
+        if Participant.objects.filter(email=email, sub_event=sub_event).exists():
+            raise ValidationError("You have already registered for this event.")
+
+        return cleaned_data
 
 
 class TeamRegistrationForm(forms.Form):

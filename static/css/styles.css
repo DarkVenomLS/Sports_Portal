@@ -11,25 +11,25 @@ header, footer {
     padding: 1rem 2rem;
 }
 
-.bg-primary {
+/* .bg-primary {
     background-color: #dc5605 !important;
-}
+} */
 
-.bg-light {
+/* .bg-light {
     background-color: #f8f9fa !important;
-}
-
+} */
+/* 
 .bg-white {
     background-color: #ffffff !important;
-}
+} */
 
-.text-primary {
+/* .text-primary {
     color: #dc5605 !important;
-}
+} */
 
-.text-white {
+/* .text-white {
     color: #ffffff !important;
-}
+} */
 
 a.text-primary:hover {
     text-decoration: underline;

@@ -25,11 +25,14 @@ class SportEvent(models.Model):
 
 class SubEvent(models.Model):
     main_event = models.ForeignKey(MainEvent, on_delete=models.CASCADE, related_name='sub_events')  # Linked to MainEvent
+    dept = models.CharField(max_length=50, default="")
     name = models.CharField(max_length=100)  # Sub-event name (e.g., Cricket, Coding Competition)
     description = models.TextField(blank=True, null=True)  # Optional description of the sub-event
     date = models.DateField()  # Date of the sub-event
     time = models.TimeField()  # Time of the sub-event
     venue = models.CharField(max_length=200)  # Venue location
+    fees = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+  # Venue location
 
     def __str__(self):
         return f"{self.name} ({self.main_event.name})"
