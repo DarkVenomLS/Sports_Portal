@@ -1,0 +1,55 @@
+
+:root {
+    --primary-color: #3F52A1;
+    --secondary-color: #7191E6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
+
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+}
+
+.content{
+    flex-grow: 1;
+}
+
+
