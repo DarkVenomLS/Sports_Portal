@@ -1,5 +1,6 @@
 # Create your views here.
-from django.http import HttpResponse
+import json
+from django.http import HttpResponse, JsonResponse
 import openpyxl
 from django.shortcuts import get_object_or_404, render, redirect
 # from django.views.generic import CreateView
@@ -36,8 +37,64 @@ class ParticipantCreateView(View):
             participant = form.save(commit=False)
             participant.sub_event = sub_event  # Ensure the correct sub-event is saved
             participant.save()
-            return redirect('/registration/success')  # Redirect after successful registration
+            return JsonResponse({"success": True, "payment_id": participant.payment_id})  # Redirect after successful registration
         return render(request, self.template_name, {'form': form, 'sub_event': sub_event, 'fees': sub_event.fees})
+
+def success_page(request):
+    if request.method == 'POST':
+        try:
+            print("🔹 Received POST request:", request.body)  
+            data = json.loads(request.body)
+            # payment_id = request.GET.get("payment_id")
+            payment_id = data.get("razorpay_payment_id")
+            full_name = data.get("name")
+            email = data.get("email")
+            college_name = data.get("college_name")
+            year_of_study = data.get("year_of_study")
+            contact_number = data.get("contact_number")
+            emergency_contact = data.get("emergency_contact")
+            sub_event_name = data.get("sub_event")
+            fees = data.get("fees")
+
+            if not payment_id:
+                print("❌ Error: Missing Payment ID")
+                return JsonResponse({"success": False, "message": "Payment ID missing"})
+            
+              # Debugging - Check if all required fields exist
+            print(f"✅ Payment ID: {payment_id}")
+            print(f"✅ Sub-Event Name: {sub_event_name}")
+            print(f"✅ Participant: {full_name}, Email: {email}")
+
+            sub_event = get_object_or_404(SubEvent, name=sub_event_name)
+            participant, created = Participant.objects.get_or_create(
+                full_name=full_name,
+                email=email,
+                college_name=college_name,
+                year_of_study=year_of_study,
+                contact_number=contact_number,
+                emergency_contact=emergency_contact,
+                sub_event=sub_event,
+                defaults={"payment_id": payment_id}
+            )
+            if not created:
+                print("⚠️ Warning: Duplicate registration detected")
+                return JsonResponse({"success": True, "payment_id": payment_id})
+            
+            print("✅ Registration successful!")
+            return JsonResponse({"success": True, "payment_id": payment_id})
+        
+        except Exception as e:
+            print(f"❌ Exception: {str(e)}") 
+            return JsonResponse({"success": False, "message": str(e)})
+        
+    elif request.method == "GET":
+        payment_id = request.GET.get("payment_id")
+        if not payment_id:
+            return render(request, "error.html", {"message": "Invalid access. No payment ID provided."})
+
+        registration = get_object_or_404(Participant, payment_id=payment_id)
+        fees = registration.sub_event.fees
+        return render(request, "success.html", {"registration": registration, "fees": fees})
 
 
 def download_participants_excel(request):
@@ -82,27 +139,24 @@ def download_participants_excel(request):
     
 #     return render(request, 'registration.html', {'form': form})
 
-def registration(request):
-    if (request.method == 'POST'):
-        form = RegistrationForm(request.POST)
+# def registration(request):
+#     if (request.method == 'POST'):
+#         form = RegistrationForm(request.POST)
         
-        if (form.is_valid()):
-            name = form.cleaned_data['fullname']
-            college = form.cleaned_data['college']
-            year_of_study = form.cleaned_data['year_of_study']
-            email = form.cleaned_data['email']
-            contact_number = form.cleaned_data['contact_number']
-            emergency_contact = form.cleaned_data['emergency_contact']
+#         if (form.is_valid()):
+#             name = form.cleaned_data['fullname']
+#             college = form.cleaned_data['college']
+#             year_of_study = form.cleaned_data['year_of_study']
+#             email = form.cleaned_data['email']
+#             contact_number = form.cleaned_data['contact_number']
+#             emergency_contact = form.cleaned_data['emergency_contact']
 
-            participant = Registration.objects.create(fullname=name, college=college, year_of_study=year_of_study, email=email, contact_number=contact_number, emergency_contact=emergency_contact)
-            participant.save()
-            # return render(request,'success.html')
-            return redirect('teamRegistration')
-    form = RegistrationForm()
-    return render(request, "templates/registration.html", {'form': form})
-
-def success_page(request):
-    return render(request, 'success.html')
+#             participant = Registration.objects.create(fullname=name, college=college, year_of_study=year_of_study, email=email, contact_number=contact_number, emergency_contact=emergency_contact)
+#             participant.save()
+#             # return render(request,'success.html')
+#             return redirect('teamRegistration')
+#     form = RegistrationForm()
+#     return render(request, "templates/registration.html", {'form': form})
 
 def teamRegistration(request):
     if (request.method == 'POST'):

@@ -45,7 +45,7 @@ class Participant(models.Model):
     contact_number = models.CharField(max_length=10)  # Contact number
     emergency_contact = models.CharField(max_length=10)  # Contact number
     sub_event = models.ForeignKey(SubEvent, on_delete=models.CASCADE, related_name='participants')  # Linked to SubEvent
-
+    payment_id = models.CharField(max_length=100, blank=True, null=True)
     class Meta:
         unique_together = ('email', 'sub_event') 
 
