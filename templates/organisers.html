@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% comment %} {% extends "base.html" %}
 
 {% block title %}Organisers{% endblock title %}
 {% block style %}
@@ -95,4 +95,47 @@ table {
     </table>
 
   </div>
-{% endblock body %}
+{% endblock body %} {% endcomment %}
+
+import React from "react";
+
+const Organisers = () => {
+    const coordinators = [
+        { position: "Teaching Sports Head", name: "Prof. Sachin Yadav", contact: "9898989898" },
+        { position: "Cricket Co-ordinator", name: "Lokesh Sarode", contact: "7972142499" },
+        { position: "Football Co-ordinator", name: "Ashwin Santapure", contact: "8080985101" },
+        { position: "Volleyball Co-ordinator", name: "Tanmay Gaikwad", contact: "9876549876" },
+        { position: "Kabaddi Co-ordinator", name: "Parag Nandre", contact: "9356610970" },
+        { position: "Badminton Co-ordinator", name: "Yash Sawant", contact: "9325132658" },
+        { position: "Chess Co-ordinator", name: "Pratham Shah", contact: "9898989898" },
+        { position: "Carrom Co-ordinator", name: "Nikhil Kagde", contact: "9022715799" },
+    ];
+
+    return (
+        <div className="container py-5">
+            <h1 className="text-primary text-center mb-4">Event Coordinators</h1>
+            <div className="content p-4 shadow rounded bg-white">
+                <table className="table table-bordered">
+                    <thead className="thead-dark">
+                        <tr>
+                            <th>Position</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {coordinators.map((coordinator, index) => (
+                            <tr key={index}>
+                                <td>{coordinator.position}</td>
+                                <td>{coordinator.name}</td>
+                                <td>{coordinator.contact}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
+};
+
+export default Organisers;
